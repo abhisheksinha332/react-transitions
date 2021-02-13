@@ -1,17 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import '../src/style.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Transition from './transition';
+import CssTransition from './csstransition';
+import TransitionGroup from './transitiongroup';
+import { findByLabelText } from '@testing-library/react';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+    const style={
+        navbar:{
+        backgroundColor:'#363636',
+        display:'flex',
+        justifyContent:'space-around',
+        lineHeight:'2rem',
+        flexWrap:'wrap',
+        },
+        link:{
+            color:'white',
+            textDecoration:'none',
+            cursor:'pointer',
+            backgroundColor:'red',
+            margin:'10px 10px',
+            padding:'0px 7px',
+            borderRadius:'10px'
+        }
+        
+        
+    }
+    
+    return(
+        <BrowserRouter>
+        <div style={style.navbar}>
+            <Link style={style.link} to ='/transition'>Transition</Link><br/>
+            <Link style={style.link} to ='/csstransition'>CSSTransition</Link><br/>
+            <Link style={style.link} to ='/transitiongroup'>Transition Group</Link><br/>       
+        </div>
+          
+        <Switch>
+            <Route path = '/transition' exact component={Transition}/>
+            <Route path = '/csstransition' component={CssTransition}/>
+            <Route path = '/transitiongroup' component={TransitionGroup}/>
+        </Switch>
+       
+        </BrowserRouter>
+    )
+}
+
+
+ReactDOM.render(<App/>, document.getElementById('root'));

@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.showDiv{
+    background: #03A9F4;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin:10px 10px;
+}
