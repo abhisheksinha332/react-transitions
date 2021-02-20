@@ -11,3 +11,64 @@
     cursor: pointer;
     margin:10px 10px;
 }
+
+
+.square{
+    background: brown;
+    height: 100px;
+    opacity: 1;
+    transition: all 2s ease;
+}
+
+.square.square-entering{
+    opacity: 1;
+    transform: translateX(0%);
+}
+.square.square-entered{
+    background: cornflowerblue;
+
+}
+.square.square-exiting{
+    background: darkgrey;
+
+}
+.square.square-exited{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.square.false{
+    background: darkmagenta;
+    transform: translateX(-100%);
+}
+.square.true{
+    transform: translateX(0%);
+}
+.square-enter.square-enter-active{
+     background: darkorange;
+}
+.square-exit.square-exit-active{
+    background: darkslateblue;
+}
+
+
+.btn-add{
+    background: darkslateblue;
+    width: 80%;
+    height:45px;
+    margin:5px auto;
+   text-align: center;
+   padding-top: 10px;
+   color: white;
+   font-weight: bold;
+}
+.btn-remove{
+    background: forestgreen;
+    width: 80%;
+    height:45px;
+    margin:5px auto;
+   text-align: center;
+   padding-top: 10px;
+   color: white;
+   font-weight: bold;
+}

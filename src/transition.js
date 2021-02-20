@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../src/style.css';
+import Transition from 'react-transition-group/Transition';
+import './style.css';
 
-class Transition extends Component {
+class Transitions extends Component {
     
 
 
@@ -16,20 +17,33 @@ class Transition extends Component {
     }
 
   
-    
+     
     render(){
     return(
         <div>
-            { this.state.show ?
-            <div style={{
-                background:'red',
-                height:'100px'
-            }}></div> : 'better luck'
-        }
+           <Transition
+            in ={this.state.show}
+            timeout={{
+                enter:2000,
+                exit:50
+            }}
+
+            onEnter = {(node) => {
+                console.log('Enter');
+            }}
+         
+           >
+               {state => 
+               <div className={`square square-${state}`}>
+                   {`square square-${state}`}
+
+               </div>
+              }
+           </Transition>
         <div className="showDiv" onClick={this.showDiv}>Show or Hide</div>
         </div>
     )
     };
 };
 
-export default Transition;
+export default Transitions;

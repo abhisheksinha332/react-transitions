@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import '../src/style.css';
 
-import Transition from './transition';
+import Transitions from './transition';
 import CssTransition from './csstransition';
-import TransitionGroup from './transitiongroup';
+import TransitionGroups from './transitiongroup';
 import { findByLabelText } from '@testing-library/react';
 
 const App = () => {
@@ -39,9 +39,9 @@ const App = () => {
         </div>
           
         <Switch>
-            <Route path = '/transition' exact component={Transition}/>
+            <Route path = '/transition' exact component={Transitions}/>
             <Route path = '/csstransition' component={CssTransition}/>
-            <Route path = '/transitiongroup' component={TransitionGroup}/>
+            <Route path = '/transitiongroup' component={TransitionGroups}/>
         </Switch>
        
         </BrowserRouter>
