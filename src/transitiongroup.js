@@ -9,7 +9,14 @@ class TransitionGroups extends Component {
 
     addElements() {
         return this.state.items.map((item,i)=>(
-            <div className="item" key={i}>{item}</div>
+            <CSSTransition
+                className="item"
+                timeout={500}
+                key={i}
+            >
+                    <div className="item" key={i}>{item}</div>
+            </CSSTransition>
+          
         ));
     }
     generateNumber(){
